@@ -7,30 +7,44 @@ namespace BindingExample;
 
 public class MainWindowViewModel : INotifyPropertyChanged
 {
-    private ObservableCollection<Fruit> _fruits;
+    private ObservableCollection<Fruit> _mainWindowViewModelFruits;
     private string _header;
+    private FruitControlViewModel _allCarriers;
 
     public MainWindowViewModel()
     {
-        this.Fruits = new();
+        this.MainWindowViewModelFruits = new();
         for (int i = 0; i < 10; i++)
         {
-            this.Fruits.Add(new Fruit{Name = $"Fruit {i} ({this.GetType().Name })"});
+            this.MainWindowViewModelFruits.Add(new Fruit{Name = $"Fruit {i} ({this.GetType().Name })"});
             
         }
         this.Header = $"Header {this.GetType().Name}";
+        this.AllCarriers = new();
+        this.AllCarriers.Fruits = this.MainWindowViewModelFruits;
     }
 
-    public ObservableCollection<Fruit> Fruits
+    public ObservableCollection<Fruit> MainWindowViewModelFruits
     {
-        get => _fruits;
-        set => SetField(ref _fruits, value);
+        get => _mainWindowViewModelFruits;
+        set => SetField(ref _mainWindowViewModelFruits, value);
     }
 
     public string Header
     {
         get => _header;
         set => SetField(ref _header, value);
+    }
+
+    public FruitControlViewModel AllCarriers
+    {
+        get => _allCarriers;
+        set
+        {
+            if (Equals(value, _allCarriers)) return;
+            _allCarriers = value;
+            OnPropertyChanged();
+        }
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

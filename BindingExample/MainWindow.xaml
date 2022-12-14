@@ -11,9 +11,7 @@
     </Window.DataContext>
     <Grid>
         <!-- this works for HEADER! -->
-        <local:FruitControl
-            Fruits="{Binding Fruits}"
-            Header="{Binding Path=Header}"/>
+        <local:FruitControl DataContext="{Binding AllCarriers}"/>
 
         <!--this doesn't for HEADER!-->
         <!--<local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay, ElementName=Mwvm}" Header="{Binding Header, Mode=TwoWay, ElementName=Mwvm}"/>-->
