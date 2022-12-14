@@ -6,6 +6,15 @@
              xmlns:local="clr-namespace:BindingExample"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:FruitControl}">
+    <!--<UserControl.DataContext>
+        <local:FruitControlViewModel x:Name="Vm"/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <Style TargetType="local:FruitControl">
+            <Setter Property="Fruits" Value="{Binding Fruits, Mode=TwoWay}" />
+            <Setter Property="Header" Value="{Binding Header, Mode=TwoWay}" />
+        </Style>
+    </UserControl.Resources>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>

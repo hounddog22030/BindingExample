@@ -8,8 +8,8 @@ namespace BindingExample;
 
 public class FruitControlViewModel : INotifyPropertyChanged
 {
-    private ObservableCollection<Fruit> _fruitControlViewModelFruits;
-    private string _fruitControlViewModelHeader;
+    private ObservableCollection<Fruit> _fruits;
+    private string _header;
 
     public FruitControlViewModel()
     {
@@ -19,16 +19,16 @@ public class FruitControlViewModel : INotifyPropertyChanged
         //this.FruitControlViewModelHeader = this.GetType().Name;
     }
 
-    public ObservableCollection<Fruit> FruitControlViewModelFruits
+    public ObservableCollection<Fruit> Fruits
     {
-        get => _fruitControlViewModelFruits;
-        set => SetField(ref _fruitControlViewModelFruits, value);
+        get => _fruits;
+        set => SetField(ref _fruits, value);
     }
 
-    public string FruitControlViewModelHeader
+    public string Header
     {
-        get => _fruitControlViewModelHeader;
-        set => SetField(ref _fruitControlViewModelHeader, value);
+        get => _header;
+        set => SetField(ref _header, value);
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
