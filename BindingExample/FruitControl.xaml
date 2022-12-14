@@ -9,11 +9,11 @@
     <UserControl.DataContext>
         <local:FruitControlViewModel/>
     </UserControl.DataContext>
-    <!--<UserControl.Resources>
+    <UserControl.Resources>
         <Style TargetType="local:FruitControl">
             <Setter Property="FruitControlFruits" Value="{Binding FruitControlViewModelFruits, Mode=TwoWay}" />
         </Style>
-    </UserControl.Resources>-->
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
