@@ -22,7 +22,7 @@ namespace BindingExample
     /// </summary>
     public partial class FruitControl : UserControl
     {
-        public static readonly DependencyProperty FruitControlFruitsProperty = DependencyProperty.Register(nameof(FruitControlFruits), typeof(ObservableCollection<Fruit>), typeof(FruitControl), new PropertyMetadata(default(ObservableCollection<Fruit>)));
+        public static readonly DependencyProperty FruitsProperty = DependencyProperty.Register(nameof(Fruits), typeof(ObservableCollection<Fruit>), typeof(FruitControl), new PropertyMetadata(default(ObservableCollection<Fruit>)));
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(nameof(Header), typeof(string), typeof(FruitControl), new PropertyMetadata(default(string)));
 
         public FruitControl()
@@ -30,10 +30,10 @@ namespace BindingExample
             InitializeComponent();
         }
 
-        public ObservableCollection<Fruit> FruitControlFruits
+        public ObservableCollection<Fruit> Fruits
         {
-            get => (ObservableCollection<Fruit>) GetValue(FruitControlFruitsProperty);
-            set => SetValue(FruitControlFruitsProperty, value);
+            get => (ObservableCollection<Fruit>) GetValue(FruitsProperty);
+            set => SetValue(FruitsProperty, value);
         }
 
         public string Header

@@ -5,23 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BindingExample"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:FruitControlViewModel}">
-    <UserControl.DataContext>
-        <local:FruitControlViewModel/>
-    </UserControl.DataContext>
-    <UserControl.Resources>
-        <Style TargetType="local:FruitControl">
-            <Setter Property="FruitControlFruits" Value="{Binding FruitControlViewModelFruits, Mode=TwoWay}" />
-            <Setter Property="Header" Value="{Binding FruitControlViewModelHeader, Mode=TwoWay}" />
-        </Style>
-    </UserControl.Resources>
+             d:DesignHeight="450" d:DesignWidth="800" d:DataContext="{d:DesignInstance local:FruitControl}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="{Binding FruitControlViewModelHeader}"></TextBlock>
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding FruitControlViewModelFruits, Mode=TwoWay}">
+        <TextBlock Grid.Row="0" Text="{Binding Header}"></TextBlock>
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding Fruits}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,0,0,5">
