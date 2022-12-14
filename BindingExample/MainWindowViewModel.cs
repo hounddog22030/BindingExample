@@ -8,17 +8,25 @@ namespace BindingExample;
 public class MainWindowViewModel : INotifyPropertyChanged
 {
     private ObservableCollection<Fruit> _mainWindowViewModelFruits;
+    private string _mainWindowHeader;
 
     public MainWindowViewModel()
     {
         this.MainWindowViewModelFruits = new();
         this.MainWindowViewModelFruits.Add(new Fruit(){Name = this.GetType().Name });
+        this.MainWindowHeader = "This is the main window header";
     }
 
     public ObservableCollection<Fruit> MainWindowViewModelFruits
     {
         get => _mainWindowViewModelFruits;
         set => SetField(ref _mainWindowViewModelFruits, value);
+    }
+
+    public string MainWindowHeader
+    {
+        get => _mainWindowHeader;
+        set => SetField(ref _mainWindowHeader, value);
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

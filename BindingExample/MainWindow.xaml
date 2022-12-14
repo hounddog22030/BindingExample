@@ -7,9 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
     <Window.DataContext>
-        <local:MainWindowViewModel/>
+        <local:MainWindowViewModel x:Name="Mwvm"/>
     </Window.DataContext>
     <Grid>
-        <local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay}"/>
+        <!--
+        
+        this works for HEADER!
+        <local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay, ElementName=Mwvm}" Header="Main Window Header From XAML"/>
+        
+        -->
+
+        <!--this doesn't for HEADER!-->
+        <local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay, ElementName=Mwvm}" Header="{Binding MainWindowHeader, Mode=TwoWay, ElementName=Mwvm}"/>
     </Grid>
 </Window>

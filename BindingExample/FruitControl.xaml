@@ -12,6 +12,7 @@
     <UserControl.Resources>
         <Style TargetType="local:FruitControl">
             <Setter Property="FruitControlFruits" Value="{Binding FruitControlViewModelFruits, Mode=TwoWay}" />
+            <Setter Property="Header" Value="{Binding FruitControlViewModelHeader, Mode=TwoWay}" />
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -19,7 +20,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="This Is The Fruits"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{Binding FruitControlViewModelHeader}"></TextBlock>
         <ItemsControl Grid.Row="1" ItemsSource="{Binding FruitControlViewModelFruits, Mode=TwoWay}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
