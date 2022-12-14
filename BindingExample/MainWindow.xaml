@@ -10,14 +10,14 @@
         <local:MainWindowViewModel x:Name="Mwvm"/>
     </Window.DataContext>
     <Grid>
-        <!--
-        
-        this works for HEADER!
-        <local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay, ElementName=Mwvm}" Header="Main Window Header From XAML"/>
-        
-        -->
+        <!-- this works for HEADER! -->
+        <local:FruitControl FruitControlFruits="MainWindowViewModelFruits" Header="Main Window Header From XAML"/>
 
         <!--this doesn't for HEADER!-->
-        <local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay, ElementName=Mwvm}" Header="{Binding MainWindowHeader, Mode=TwoWay, ElementName=Mwvm}"/>
+        <!--<local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay, ElementName=Mwvm}" Header="{Binding Header, Mode=TwoWay, ElementName=Mwvm}"/>-->
+
+        <!-- this doesn't either for HEADER! -->
+        <!--<local:FruitControl FruitControlFruits="{Binding MainWindowViewModelFruits, Mode=TwoWay, ElementName=Mwvm}" Header="{Binding}"/>-->
+
     </Grid>
 </Window>
